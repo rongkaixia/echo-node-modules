@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var path = require('path');
+var fs = require('fs');
 
 var moduleRoot = (function (_rootPath) {
 	var parts = _rootPath.split(path.sep);
@@ -18,7 +20,10 @@ var Mango = function () {
   this.options = {
   	'module root': moduleRoot
   }
+
+  this.Types = mongoose.Schema.Types
 }
+
 var mango = module.exports = exports = new Mango();
 
 mango.Collection = require('./collection')
