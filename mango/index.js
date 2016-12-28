@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
 var path = require('path');
 var fs = require('fs');
 

@@ -26,16 +26,16 @@ export default class Collection {
   	this.schema.add(obj, prefix)
   }
 
-// l(name, [schema], [collection], [skipInit])
-
-  model() {
-  	return mongoose.model(this.name, this.schema)
-  }
+  // model() {
+  // 	return mongoose.model(this.name, this.schema)
+  // }
 
   register() {
   	if (!this.mango) {
   		throw new Error("this.mango is not exist")
   	}
+    console.log(JSON.stringify(this.schema));
+    this.model = mongoose.model(this.name, this.schema)
   	this.mango.register(this)
   }
 }
