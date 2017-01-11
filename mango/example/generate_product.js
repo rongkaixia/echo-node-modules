@@ -55,7 +55,8 @@ mango.db.on('open', function() {
 		console.log("jadeRingDoc: " + JSON.stringify(jadeRingDoc))
 		console.log("jadeNecklaceCategory and jadeRingCategory save success")
 		let necklace_spu_1 = new Product({
-			class_id: mango.mongoose.Types.ObjectId(jadeNecklaceDoc.id),
+			category_id: mango.mongoose.Types.ObjectId(jadeNecklaceDoc.id),
+			category_name: "jade-necklace",
 		  name: "经典 - 翡翠吊坠",
 		  brief_desc: "精选心型翡翠吊坠", // 简要描述，用于购买页展示
 		  common_props: [ // 公共属性
